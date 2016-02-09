@@ -23,6 +23,8 @@ class MyCatalog
     unless Dir.exist?(path)
       puts  Rainbow(" *** Device is not connected *** ").color(:red)
       exit
+    else
+      true
     end
   end
 
@@ -130,8 +132,11 @@ class MyCatalog
   end
 
   def run
+
     ans = promt
+    
     case ans
+   
     when 'l'
 
       system('clear')
@@ -144,6 +149,15 @@ class MyCatalog
       @catalog = listFolder @path
       display
       question
+
+    when 'e'
+
+      puts Rainbow("May the Force be with you ... !!!" ).color(:yellow)
+      exit
+
+    else
+      
+      run
     end
   end
 end
